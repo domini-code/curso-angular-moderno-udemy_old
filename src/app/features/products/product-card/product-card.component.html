@@ -1,4 +1,6 @@
 <!-- <div class="product-container"> -->
+@let product = currentProduct();
+
 <a class="product-image-link" [routerLink]="['/products', (product.id)]">
   <img class="product-image" src="{{ product.image }}" alt="{{ product.title }}" />
 </a>

@@ -1,12 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-details',
   standalone: true,
   imports: [],
-  templateUrl: './details.component.html',
-  styleUrl: './details.component.scss',
+  template: `<p>Show product details {{ productId() }}</p>`,
 })
 export class DetailsComponent {
-  @Input() productId!: number;
+  // @Input() productId!: number;
+  productId = input.required<number>();
 }

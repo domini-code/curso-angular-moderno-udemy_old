@@ -1,7 +1,7 @@
 <div class="products-container">
   <div class="product-grid">
-    <ng-container *ngFor="let product of products$ | async as products; trackBy:trackFn">
-      <app-product-card class="product-card" [product]="product"></app-product-card>
-    </ng-container>
+    @for (product of products$(); track $index) {
+    <app-product-card class="product-card" [product]="product" />
+    }
   </div>
 </div>
