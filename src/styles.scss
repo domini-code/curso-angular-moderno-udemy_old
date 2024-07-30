@@ -128,7 +128,7 @@
 /* Products/card component */
 @layer components {
   .product-card {
-    @apply p-4 mt-2 mb-6 overflow-hidden rounded-b-lg shadow-none hover:shadow-2xl text-slate-medium;
+    @apply p-4 mt-2 mb-6 overflow-hidden rounded-b-lg shadow-none hover:shadow-xl text-slate-medium;
   }
 
   .product-image-link {
