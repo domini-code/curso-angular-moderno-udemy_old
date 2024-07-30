@@ -7,6 +7,11 @@ const routes: Routes = [
     path: '',
     component: ProductsComponent,
   },
+  {
+    path: ':productId',
+    loadComponent: () =>
+      import('./details/details.component').then((c) => c.DetailsComponent),
+  },
 ];
 
 @NgModule({

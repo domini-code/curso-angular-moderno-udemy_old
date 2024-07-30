@@ -144,7 +144,7 @@
   }
 
   .product-title {
-    @apply py-4 text-lg font-medium text-slate-default;
+    @apply py-4 text-sm font-medium text-slate-default;
   }
 
 }
@@ -176,7 +176,7 @@
   }
 
   .product-title {
-    @apply mb-1 text-3xl font-medium text-slate-default;
+    @apply mb-1 text-sm font-medium text-slate-default;
   }
 
   .product-reviews {
