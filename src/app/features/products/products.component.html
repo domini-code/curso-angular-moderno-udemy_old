@@ -1,7 +1,15 @@
 <div class="products-container">
   <div class="product-grid">
     @for (product of products$(); track $index) {
-    <app-product-card class="product-card" [product]="product" />
+    @defer {
+    <app-product-card data-testid="product-card" class="product-card" [product]="product" />
+    } @error {
+    <p>Failed to load product card</p>
+    } @loading {
+    <p>Loading........</p>
+    }
+    } @empty {
+    <p>No results yet!</p>
     }
   </div>
 </div>
