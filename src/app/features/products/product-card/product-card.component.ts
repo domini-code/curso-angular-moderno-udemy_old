@@ -12,6 +12,11 @@ import { Product } from '../models/product.model';
 })
 export class ProductCardComponent {
   // @Input({ required: true }) product!: Product;
-
+  // toggleCategory = output();
+  showCategory = false;
   currentProduct = input.required<Product>({ alias: 'product' });
+
+  toggleCategory() {
+    this.showCategory = !this.showCategory;
+  }
 }

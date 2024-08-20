@@ -1,13 +1,14 @@
-<!-- <div class="product-container"> -->
 @let product = currentProduct();
-
 <a class="product-image-link" [routerLink]="['/products', (product.id)]">
   <img class="product-image" src="{{ product.image }}" alt="{{ product.title }}" />
 </a>
 <div class="mt-4">
   <h3 class="product-category">
+    @if (showCategory) {
     {{ product.category }}
+    }
   </h3>
+
   <h2 class="product-title">
     <a [routerLink]="['/products', (product.id)]">
       {{ product.title | slice: 0 : 30 }}</a>
@@ -16,5 +17,9 @@
     <p class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2': 'es' }}</p>
     <!-- <app-add-to-cart (addToCartEvent)="onAddToCart()" /> -->
   </div>
+  <div class="my-2 flex-space-between">
+    <label [for]="'showCategory' + product.id">
+      <input [id]="'showCategory' + product.id" type="checkbox" (change)="toggleCategory()" [checked]="showCategory" />
+      Show category name</label>
+  </div>
 </div>
-<!-- </div> -->
