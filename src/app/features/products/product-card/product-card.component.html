@@ -8,7 +8,6 @@
     {{ product.category }}
     }
   </h3>
-
   <h2 class="product-title">
     <a [routerLink]="['/products', (product.id)]">
       {{ product.title | slice: 0 : 30 }}</a>
@@ -17,10 +16,4 @@
     <p class="product-price">{{ product.price | currency:'EUR':'symbol':'1.2-2': 'es' }}</p>
     <!-- <app-add-to-cart (addToCartEvent)="onAddToCart()" /> -->
   </div>
-  <!-- <div class="my-2 flex-space-between">
-    <label>
-      <input type="checkbox" [checked]="showCategory" (change)="onToggleCategory()" />
-      Show category name
-    </label>
-  </div> -->
 </div>

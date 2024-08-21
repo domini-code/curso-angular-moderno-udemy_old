@@ -15,8 +15,4 @@ export class ProductCardComponent {
 
   showCategory = false;
   currentProduct = input.required<Product>({ alias: 'product' });
-
-  onToggleCategory() {
-    this.showCategory = !this.showCategory;
-  }
 }
