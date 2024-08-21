@@ -28,7 +28,7 @@
           <span>&copy; 2024 Dominicode. Todos los derechos reservados.</span>
         </div>
         <div class="flex items-center mt-4 md:mt-0">
-          <input type="checkbox" id="terms" [(ngModel)]="acceptTerms" class="mr-2">
+          <input type="checkbox" id="terms" (change)="onChange()" [checked]="acceptTerms$()" class="mr-2">
           <label for="terms" class="text-sm">He leído y acepto los <a href="#" class="text-blue-400 underline">términos
               y
               condiciones</a>.</label>
