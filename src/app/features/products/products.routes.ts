@@ -4,6 +4,7 @@ import { ProductsComponent } from './products.component';
 const productRoutes: Routes = [
   {
     path: '',
+    // providers: [provideEffects(ProductEffects)],
     component: ProductsComponent,
   },
   {

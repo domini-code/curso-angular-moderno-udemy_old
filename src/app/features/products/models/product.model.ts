@@ -6,3 +6,10 @@ export interface Product {
   description: string;
   image: string;
 }
+
+export interface ProductState {
+  acceptTerms: boolean;
+  products: Product[];
+  loading: boolean;
+  errorMessage: string | null;
+}

@@ -1,8 +1,11 @@
 <div class="products-container">
-  <div class="product-grid" *ngIf="!loading; else loadingProducts">
+  @if ((loading$ | async) === false) {
+  <div class="product-grid">
     @for (product of products$(); track $index) {
     <app-product-card data-testid="product-card" class="product-card" [product]="product" />
     }
   </div>
+  }@else {
   <ng-template #loadingProducts>Loading....</ng-template>
+  }
 </div>
