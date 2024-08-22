@@ -1,5 +1,31 @@
 <div class="flex flex-col h-screen">
+  <header>
+    <nav class="p-4 bg-gray-800">
+      <ul class="mt-2 space-y-2">
+        <li class="nav-item">
+          <a class="text-lg font-bold text-gray-300 cursor-pointer hover:text-white" routerLink="/"
+            routerLinkActive="text-white">NgRx</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
   <main class="flex-grow">
     <router-outlet />
   </main>
+  <footer class="p-4 text-white bg-gray-800">
+    <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center justify-between md:flex-row">
+        <div class="text-sm">
+          <span>&copy; 2024 Dominicode. Todos los derechos reservados.</span>
+        </div>
+        <div class="flex items-center mt-4 md:mt-0">
+          <input type="checkbox" id="terms" (change)="onChange()" [checked]="acceptTerms$()" class="mr-2">
+          <label for="terms" class="text-sm">He leído y acepto los <a href="#" class="text-blue-400 underline">términos
+              y
+              condiciones</a>.</label>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>

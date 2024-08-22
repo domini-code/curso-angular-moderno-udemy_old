@@ -1,9 +1,14 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, inject, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { APIService } from '../../api/api.service';
+import { Store } from '@ngrx/store';
 import { Product } from './models/product.model';
 import { ProductCardComponent } from './product-card/product-card.component';
+import * as productsActions from './state/products.actions';
+import {
+  selectAllProducts,
+  selectProductsLoading,
+} from './state/products.selectors';
 
 @Component({
   selector: 'app-products',
@@ -13,12 +18,13 @@ import { ProductCardComponent } from './product-card/product-card.component';
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent {
-  // products$!: Observable<Product[]>;
+  private readonly _store = inject(Store);
+
+  loading$ = this._store.select(selectProductsLoading);
   products$: Signal<Product[] | undefined>;
 
-  private readonly _apiSvc = inject(APIService);
-
   constructor() {
-    this.products$ = toSignal(this._apiSvc.getProducts());
+    this._store.dispatch(productsActions.loadProducts());
+    this.products$ = toSignal(this._store.select(selectAllProducts));
   }
 }
