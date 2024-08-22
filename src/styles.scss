@@ -1,1 +1,499 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Generics */
+@layer components {
+
+  button:disabled {
+    @apply cursor-not-allowed disabled:bg-primary-light;
+  }
+
+  .product-price {
+    @apply text-2xl font-bold text-primary-default;
+  }
+
+
+  .flex-space-between {
+    @apply flex items-center justify-between;
+  }
+
+  .input-primary {
+    @apply w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-primary-default;
+  }
+
+  .btn-primary {
+    @apply w-full px-6 py-4 leading-5 text-white transition-colors duration-200 transform bg-primary-default rounded-md hover:bg-primary-dark focus:outline-none focus:bg-primary-dark;
+  }
+
+}
+
+/* Categories component */
+@layer components {
+  .product-card {
+    @apply w-full p-4 lg:w-1/4 md:w-1/2;
+  }
+}
+
+/* Checkout/thank-you component */
+@layer components {
+  .centered-container {
+    @apply flex flex-col items-center justify-center min-h-screen text-center;
+  }
+
+  .icon {
+    @apply w-24 h-24 text-primary-default;
+  }
+
+  .heading {
+    @apply mt-5 text-xl font-semibold text-gray-default;
+  }
+
+  .link {
+    @apply inline-block px-4 py-2 mt-6 font-bold text-white bg-primary-default rounded hover:bg-primary-dark;
+  }
+}
+
+/* Checkout/ component */
+@layer components {
+  .custom-container-lg {
+    @apply w-full mx-auto overflow-auto lg:w-2/3;
+  }
+
+  .custom-flex-col {
+    @apply flex flex-col w-full mb-20 text-center;
+  }
+
+  .custom-heading {
+    @apply mb-2 text-3xl font-medium text-gray-default sm:text-4xl;
+  }
+
+  .btn {
+    @apply flex px-8 py-2 text-lg text-white bg-primary-default border-0 rounded focus:outline-none hover:bg-red-600;
+  }
+
+  .custom-table {
+    @apply w-full text-left whitespace-nowrap table-auto;
+  }
+
+  .custom-table-header {
+    @apply px-2 py-3 text-sm font-medium tracking-wider text-gray-default bg-gray-100 rounded-tl rounded-bl;
+  }
+
+  .custom-table-cell-price {
+    @apply py-3 text-lg font-semibold text-gray-default;
+  }
+
+  .custom-remove-product {
+    @apply flex items-center px-2 py-1 pl-0 space-x-2 text-primary-default cursor-pointer;
+  }
+
+  .custom-pay-button {
+    @apply flex px-8 py-2 text-white bg-primary-default border-0 rounded focus:outline-none hover:bg-primary-dark;
+  }
+
+  .custom-empty-cart-heading {
+    @apply my-2 text-3xl font-medium text-gray-default sm:text-4xl;
+  }
+
+  .custom-flex-item {
+    @apply flex items-center px-2 py-1 pl-0 space-x-2 text-primary-default cursor-pointer;
+  }
+
+  .custom-table-cell-total {
+    @apply py-3 text-lg not-italic font-bold text-gray-default;
+  }
+
+  .custom-flex-end {
+    @apply flex justify-end w-full;
+  }
+}
+
+/* Products component */
+@layer components {
+  .products-container {
+    @apply container px-5 py-24 mx-auto;
+  }
+
+  .product-grid {
+    @apply flex flex-wrap -m-4;
+  }
+
+  .product-card {
+    @apply w-full p-4 lg:w-1/4 md:w-1/2;
+  }
+}
+
+/* Products/card component */
+@layer components {
+  .product-card {
+    @apply p-4 mt-2 mb-6 overflow-hidden rounded-b-lg shadow-none hover:shadow-xl text-slate-medium;
+  }
+
+  .product-image-link {
+    @apply relative block h-48 overflow-hidden rounded;
+  }
+
+  .product-image {
+    @apply w-full transition duration-500 transform hover:scale-105;
+  }
+
+  .product-category {
+    @apply mb-1 text-xs tracking-widest;
+  }
+
+  .product-title {
+    @apply py-4 text-sm font-medium text-slate-default;
+  }
+
+}
+
+/* Products/details component */
+@layer components {
+  .product-section {
+    @apply overflow-hidden text-slate-medium;
+  }
+
+  .product-container {
+    @apply container px-5 py-24 mx-auto;
+  }
+
+  .product-wrapper {
+    @apply flex flex-wrap mx-auto lg:w-4/5;
+  }
+
+  .product-image {
+    @apply object-cover object-center w-full h-64 rounded lg:w-1/2 lg:h-auto;
+  }
+
+  .product-details {
+    @apply w-full mt-6 lg:w-1/2 lg:pl-10 lg:py-6 lg:mt-0;
+  }
+
+  .product-category {
+    @apply text-sm tracking-widest;
+  }
+
+  .product-title {
+    @apply mb-1 text-sm font-medium text-slate-default;
+  }
+
+  .product-reviews {
+    @apply flex items-center;
+  }
+
+  .product-description {
+    @apply mt-6 mb-5 leading-relaxed;
+  }
+
+  .wishlist {
+    @apply gap-2 mr-2 cursor-pointer product-reviews;
+  }
+}
+
+/* Users/auth/login component */
+@layer components {
+
+  .link {
+    @apply font-medium text-primary-default hover:text-primary-dark;
+  }
+
+  .container {
+    @apply flex flex-col items-center justify-center min-h-screen;
+  }
+
+  .card {
+    @apply w-full max-w-lg space-y-8;
+  }
+
+  .card-content {
+    @apply px-8 py-6 mt-4 text-left bg-white rounded-b-lg shadow-2xl;
+  }
+
+  .heading {
+    @apply text-2xl font-bold text-center;
+  }
+}
+
+/* Users/auth/register component */
+@layer components {
+
+  .error-message {
+    @apply p-2 mt-1 font-bold text-white bg-red-500 rounded-md;
+  }
+
+  .link {
+    @apply font-medium text-primary-default hover:text-primary-dark;
+  }
+
+  .heading {
+    @apply text-2xl font-bold text-center;
+  }
+
+  .container {
+    @apply flex flex-col items-center justify-center min-h-screen;
+  }
+
+  .card {
+    @apply w-full max-w-lg space-y-8;
+  }
+
+  .card-content {
+    @apply px-8 py-6 mt-4 text-left bg-white rounded-b-lg shadow-2xl;
+  }
+}
+
+/* Users/orders component */
+@layer components {
+  .table-responsive-container {
+    @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8;
+  }
+
+  .table-full-divided {
+    @apply min-w-full divide-y divide-gray-200;
+  }
+
+  .flex-col-full {
+    @apply *:flex flex-col w-full text-center;
+  }
+
+  .heading {
+    @apply text-3xl font-medium text-gray-default sm:text-4xl title-font;
+  }
+
+  .table-heading {
+    @apply px-6 py-3 text-xs font-medium tracking-wider text-left text-gray-lighter uppercase;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap;
+  }
+
+  .text-medium {
+    @apply text-sm font-medium text-gray-default;
+  }
+
+  .table-container {
+    @apply inline-block min-w-full py-2 align-middle sm:px-6 lg:px-8;
+  }
+
+  .table-wrapper {
+    @apply overflow-hidden border-b border-gray-200 shadow sm:rounded-lg;
+  }
+
+
+  .order-status {
+    @apply inline-flex px-2 text-xs font-semibold leading-5 rounded-full;
+  }
+
+  .succeeded {
+    @apply text-green-800 bg-green-100;
+    @extend .order-status;
+  }
+
+  .processing {
+    @apply text-yellow-800 bg-yellow-100;
+    @extend .order-status;
+  }
+
+  .canceled {
+    @apply text-red-800 bg-red-100;
+    @extend .order-status;
+  }
+
+}
+
+/* Users/profile component */
+@layer components {
+
+  .main-section {
+    @apply flex flex-col items-center justify-center min-h-screen bg-gray-100;
+  }
+
+  .main-container {
+    @apply w-full max-w-6xl mb-10 space-y-8;
+  }
+
+  .card {
+    @apply px-8 py-6 mt-4 text-left bg-white rounded-b-lg shadow-2xl;
+  }
+
+  .card-title {
+    @apply text-2xl font-bold text-center;
+  }
+
+  .form-section {
+    @apply p-4 mt-4 rounded-md;
+  }
+
+  .form-section-title {
+    @apply mb-4 text-lg font-bold;
+  }
+
+  .form-input-container {
+    @apply flex flex-wrap -mx-2;
+  }
+
+  .form-input-item {
+    @apply w-full px-2 md:w-1/2;
+  }
+}
+
+/* Footer component */
+@layer components {
+
+  .footer {
+    @apply w-full text-slate-dark flex flex-col items-center bg-slate-lighter;
+  }
+
+  .footer-container {
+    @apply container px-5 py-4 ml-auto;
+  }
+
+  .footer-text {
+    @apply text-sm font-semibold text-slate-dark xl:text-center;
+  }
+}
+
+/* Header component */
+@layer components {
+  @keyframes slideDown {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .show-cart-animation {
+    animation: slideDown 0.5s ease-out forwards;
+  }
+
+  .navbar {
+    @apply p-4 text-white bg-primary-default;
+  }
+
+  .nav-container {
+    @apply container mx-auto;
+  }
+
+  .nav-logo {
+    @apply text-lg font-bold;
+  }
+
+  .dropdown-menu {
+    @apply absolute hidden bg-white rounded-md shadow-md w-44 group-hover:block;
+  }
+
+  .dropdown-item {
+    @apply block px-4 py-2 text-sm capitalize text-slate-default hover:bg-slate-medium hover:text-white;
+  }
+
+  .cart-info {
+    @apply absolute right-0 px-1 text-lg font-bold text-white -top-1;
+  }
+
+  .cart-dropdown {
+    @apply absolute right-0 z-30 w-48 p-2 mt-2 text-white rounded-sm bg-slate-400;
+  }
+
+  .cart-total {
+    @apply flex justify-between py-3 font-light;
+  }
+
+  .border-divider {
+    @apply my-4 border-gray-lighter border-r;
+  }
+}
+
+/* Hero component */
+@layer components {
+  .section-container {
+    @apply container mx-auto flex px-5 py-12 md:flex-row flex-col items-center;
+  }
+
+  .text-container {
+    @apply lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center;
+  }
+
+  .heading {
+    @apply max-w-xl text-[2.2rem] leading-none text-slate-900 font-extrabold font-sans text-center md:text-5xl lg:text-left lg:leading-tight mb-5;
+  }
+
+  .sub-heading {
+    @apply mb-8 leading-relaxed;
+  }
+
+  .btn-container {
+    @apply flex w-1/4;
+  }
+
+  .image-container {
+    @apply lg:max-w-lg lg:w-full md:w-1/2 w-5/6;
+  }
+
+  .image {
+    @apply object-cover object-center rounded;
+  }
+}
+
+/* Shared/ui/addToCart component */
+@layer components {
+  .btn {
+    @apply px-2 py-1 text-white bg-primary-default rounded hover:bg-primary-dark;
+  }
+}
+
+/* Shared/ui/filter component */
+@layer components {
+  .heading {
+    @apply text-center font-bold text-4xl max-w-lg mx-auto text-slate-default;
+  }
+
+  .highlight {
+    @apply text-transparent bg-clip-text bg-gradient-to-br from-primary-default from-20% via-primary-mid via-30% to-primary-dark;
+  }
+
+  .list-container {
+    @apply flex flex-wrap gap-3 py-10 items-center justify-center;
+  }
+
+  .btn {
+    @apply bg-primary-default text-base font-medium px-6 capitalize py-2 rounded-md flex items-center gap-2 text-white ease-linear duration-300;
+
+    &-hover {
+      @apply hover:bg-primary-dark;
+    }
+  }
+}
+
+/* Shared/ui/quantity component */
+@layer components {
+  .btn {
+    @apply px-3 py-1 bg-primary-default text-white text-sm font-semibold rounded-md hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-default focus:ring-opacity-50;
+  }
+
+  .input {
+    @apply w-16 px-2 py-1 text-sm text-center border rounded-md focus:ring focus:ring-primary-default focus:ring-opacity-50;
+  }
+
+  .flex-center-space {
+    @apply flex items-center space-x-2;
+  }
+}
+
+/* Shared/ui/spinner component */
+@layer components {
+  .flex-center {
+    @apply flex justify-center items-center min-h-screen;
+  }
+
+  .spinner {
+    @apply animate-spin rounded-full h-32 w-32 border-t-4 border-b-4 border-primary-default;
+  }
+}
