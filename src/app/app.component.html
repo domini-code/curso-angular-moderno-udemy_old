@@ -1,10 +1,9 @@
 <div class="flex flex-col h-screen">
   <header>
     <nav class="p-4 bg-gray-800">
-
       <ul class="mt-2 space-y-2">
         <li class="nav-item">
-          <a class="text-lg font-bold text-gray-300 hover:text-white" routerLink="/products"
+          <a class="text-lg font-bold text-gray-300 cursor-pointer hover:text-white" routerLink="/"
             routerLinkActive="text-white">NgRx</a>
         </li>
       </ul>
@@ -14,13 +13,6 @@
   <main class="flex-grow">
     <router-outlet />
   </main>
-  <!-- 
-  <footer>
-    @if(!acceptTerms) { 
-    <h3>Do you want to use NgRx?</h3>
-    <input [(ngModel)]="acceptTerms" type="checkbox">
-    } 
-  </footer> -->
   <footer class="p-4 text-white bg-gray-800">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex flex-col items-center justify-between md:flex-row">

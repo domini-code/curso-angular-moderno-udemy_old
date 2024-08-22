@@ -2,7 +2,7 @@ import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FormsModule } from '@angular/forms';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -10,7 +10,7 @@ import { Store } from '@ngrx/store';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, AsyncPipe],
+  imports: [RouterOutlet, FormsModule, AsyncPipe, RouterLink],
 })
 export class AppComponent {
   _store = inject(Store);

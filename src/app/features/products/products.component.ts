@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, NgIf } from '@angular/common';
 import { Component, inject, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { APIService } from '../../api/api.service';
@@ -8,11 +8,12 @@ import { ProductCardComponent } from './product-card/product-card.component';
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [ProductCardComponent, AsyncPipe],
+  imports: [ProductCardComponent, AsyncPipe, NgIf],
   templateUrl: './products.component.html',
   styleUrl: './products.component.scss',
 })
 export class ProductsComponent {
+  loading = false;
   // products$!: Observable<Product[]>;
   products$: Signal<Product[] | undefined>;
 

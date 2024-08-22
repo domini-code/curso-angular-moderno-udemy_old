@@ -1,15 +1,8 @@
 <div class="products-container">
-  <div class="product-grid">
+  <div class="product-grid" *ngIf="!loading; else loadingProducts">
     @for (product of products$(); track $index) {
-    @defer {
     <app-product-card data-testid="product-card" class="product-card" [product]="product" />
-    } @error {
-    <p>Failed to load product card</p>
-    } @loading {
-    <p>Loading........</p>
-    }
-    } @empty {
-    <p>No results yet!</p>
     }
   </div>
+  <ng-template #loadingProducts>Loading....</ng-template>
 </div>
