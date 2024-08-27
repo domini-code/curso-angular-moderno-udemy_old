@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.1.0",
     "@angular/router": "^18.1.0",
     "@ngrx/effects": "^18.0.2",
+    "@ngrx/router-store": "^18.0.2",
     "@ngrx/store": "^18.0.2",
     "@ngrx/store-devtools": "^18.0.2",
     "rxjs": "~7.8.0",
@@ -38,6 +39,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "postcss": "^8.4.40",
+    "prettier": "3.3.3",
     "tailwindcss": "^3.4.7",
     "typescript": "~5.5.2"
   }

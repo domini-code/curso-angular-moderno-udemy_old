@@ -24,7 +24,7 @@ export class APIService {
     return this._httpClient.put<Product>(`${this._myURL}/${id}`, product);
   }
 
-  deleteProduct(id: number): Observable<any> {
+  deleteProduct(id: number): Observable<unknown> {
     return this._httpClient.delete(`${this._myURL}/${id}`);
   }
 }
